@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="tools-list">
+    <view class="tool-item" 
+          wx:for="{{tools}}" 
+          wx:key="id">
+      <view class="tool-info">
+        <text class="tool-name">{{item.name}}</text>
+        <text class="tool-desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+</view> 

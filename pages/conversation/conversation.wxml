@@ -1,0 +1,59 @@
+<view class="container">
+  <!-- 对话列表 -->
+  <view class="dialogue-list" wx:if="{{!currentDialogue}}">
+    <view class="title">对话练习</view>
+    <view class="dialogue-item" 
+          wx:for="{{dialogues}}" 
+          wx:key="id"
+          bindtap="selectDialogue"
+          data-id="{{item.id}}">
+      <view class="dialogue-info">
+        <text class="dialogue-title">{{item.title}}</text>
+        <text class="dialogue-level">{{item.level}}</text>
+      </view>
+      <text class="dialogue-count">{{item.conversations.length}}句对话</text>
+    </view>
+  </view>
+
+  <!-- 练习界面 -->
+  <view class="practice-container" wx:else>
+    <view class="practice-header">
+      <text class="practice-title">{{currentDialogue.title}}</text>
+      <text class="practice-progress">{{currentIndex + 1}}/{{currentDialogue.conversations.length}}</text>
+    </view>
+
+    <view class="conversation-card">
+      <view class="conversation-content">
+        <text class="conversation-text">{{currentDialogue.conversations[currentIndex].question}}</text>
+        <text class="conversation-pinyin">{{currentDialogue.conversations[currentIndex].pinyin}}</text>
+        <view class="audio-controls">
+          <button class="standard-btn" bindtap="playStandardAudio">
+            听标准发音
+          </button>
+          <button class="play-record-btn" 
+                  bindtap="playRecordedAudio" 
+                  wx:if="{{lastRecordFile}}">
+            听我的录音
+          </button>
+        </view>
+      </view>
+      <view class="conversation-content answer">
+        <text class="conversation-text">{{currentDialogue.conversations[currentIndex].answer}}</text>
+      </view>
+    </view>
+
+    <view class="practice-controls">
+      <button class="record-btn"
+              bindtouchstart="startRecord"
+              bindtouchend="stopRecord"
+              hover-class="button-hover">
+        {{recording ? '录音中...' : '按住练习'}}
+      </button>
+      <button class="next-btn"
+              bindtap="nextConversation"
+              hover-class="button-hover">
+        下一句
+      </button>
+    </view>
+  </view>
+</view> 

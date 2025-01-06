@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="user-card">
+    <text class="nickname">{{userInfo.nickName || '亲爱的学员'}}</text>
+  </view>
+
+  <view class="menu-list">
+    <view class="menu-item" 
+          wx:for="{{menuItems}}" 
+          wx:key="id">
+      <text class="menu-title">{{item.title}}</text>
+      <view class="arrow">></view>
+    </view>
+  </view>
+</view> 

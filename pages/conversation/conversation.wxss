@@ -1,0 +1,133 @@
+.container {
+  padding: 20px;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.dialogue-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dialogue-info {
+  flex: 1;
+}
+
+.dialogue-title {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+
+.dialogue-level {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+  display: block;
+}
+
+.dialogue-count {
+  font-size: 14px;
+  color: #4CAF50;
+}
+
+/* 练习界面样式 */
+.practice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.practice-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.practice-progress {
+  font-size: 16px;
+  color: #666;
+}
+
+.conversation-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.conversation-content {
+  margin-bottom: 15px;
+}
+
+.conversation-content.answer {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.conversation-text {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.conversation-pinyin {
+  font-size: 14px;
+  color: #666;
+}
+
+.practice-controls {
+  display: flex;
+  gap: 15px;
+}
+
+.record-btn, .next-btn {
+  flex: 1;
+  height: 44px;
+  line-height: 44px;
+  background: #4CAF50;
+  color: white;
+  border-radius: 22px;
+  font-size: 16px;
+}
+
+.button-hover {
+  background: #388E3C !important;
+}
+
+.audio-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.standard-btn, .play-record-btn {
+  flex: 1;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  border-radius: 18px;
+}
+
+.standard-btn {
+  background: #4CAF50;
+  color: white;
+}
+
+.play-record-btn {
+  background: #2196F3;
+  color: white;
+} 

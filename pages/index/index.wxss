@@ -1,0 +1,127 @@
+.container {
+  padding: 20px;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* 顶部用户信息样式 */
+.header {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  margin-right: 15px;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+}
+
+.nickname {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.welcome {
+  font-size: 14px;
+  color: #666;
+}
+
+/* 学习数据面板样式 */
+.stats-panel {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4CAF50;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 功能模块样式 */
+.modules {
+  background: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.module-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.module-item:last-child {
+  border-bottom: none;
+}
+
+.module-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+.module-info {
+  flex: 1;
+}
+
+.module-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.module-desc {
+  font-size: 12px;
+  color: #666;
+}
+
+.arrow {
+  color: #999;
+  font-size: 18px;
+}
+
+/* 学习提示样式 */
+.study-tip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.study-tip icon {
+  margin-right: 5px;
+} 

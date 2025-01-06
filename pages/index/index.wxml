@@ -1,1 +1,47 @@
- 
+<view class="container">
+  <!-- 顶部用户信息 -->
+  <view class="header">
+    <view class="user-info">
+      <view class="greeting">
+        <text class="nickname">{{userInfo.nickName || '亲爱的学员'}}</text>
+        <text class="welcome">欢迎继续学习！</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 学习数据展示 -->
+  <view class="stats-panel">
+    <view class="stat-item">
+      <text class="stat-value">{{learningStats.todayMinutes}}</text>
+      <text class="stat-label">今日学习(分钟)</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-value">{{learningStats.masteredCharacters}}</text>
+      <text class="stat-label">已掌握汉字</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-value">{{learningStats.totalCharacters}}</text>
+      <text class="stat-label">总计学习</text>
+    </view>
+  </view>
+
+  <!-- 功能模块入口 -->
+  <view class="modules">
+    <view class="module-item" 
+          wx:for="{{modules}}" 
+          wx:key="id"
+          bindtap="navigateTo"
+          data-path="{{item.path}}">
+      <view class="module-info">
+        <text class="module-title">{{item.title}}</text>
+        <text class="module-desc">{{item.desc}}</text>
+      </view>
+      <view class="arrow">></view>
+    </view>
+  </view>
+
+  <!-- 学习提示 -->
+  <view class="study-tip">
+    <text>每天学习一点点，进步看得见</text>
+  </view>
+</view> 
