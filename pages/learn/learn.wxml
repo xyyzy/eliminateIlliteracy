@@ -1,21 +1,21 @@
 <view class="container">
-  <view class="title">常用汉字</view>
-  
-  <view class="character-grid">
-    <view class="character-item" 
-          wx:for="{{commonCharacters}}" 
-          wx:key="char">
-      <view class="character-content">
-        <text class="character">{{item.char}}</text>
-        <text class="pinyin">{{item.pinyin}}</text>
-        <text class="meaning">{{item.meaning}}</text>
+  <view class="character-card">
+    <view class="character">{{currentChar}}</view>
+    <view class="pinyin">{{pinyin}}</view>
+    <view class="meaning">{{meaning}}</view>
+    <view class="play-button" bindtap="playPronunciation">
+      <text class="iconfont icon-play"></text>
+      播放发音
+    </view>
+  </view>
+
+  <view class="examples-section">
+    <view class="section-title">例句学习</view>
+    <view class="examples-list">
+      <view class="example-item" wx:for="{{examples}}" wx:key="text" bindtap="playExample" data-text="{{item.text}}">
+        <view class="example-text">{{item.text}}</view>
+        <view class="example-pinyin">{{item.pinyin}}</view>
       </view>
-      <button class="audio-btn"
-              bindtouchstart="startRecord"
-              data-index="{{index}}"
-              hover-class="button-hover">
-        {{recording ? '录音中...' : '按住说话'}}
-      </button>
     </view>
   </view>
 </view> 

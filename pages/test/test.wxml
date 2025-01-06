@@ -1,0 +1,7 @@
+<!-- 测试页面 -->
+<view class="container">
+  <view class="test-content">
+    <text>测试文本: {{testText}}</text>
+    <button type="primary" bindtap="testVoice">播放语音</button>
+  </view>
+</view> 
