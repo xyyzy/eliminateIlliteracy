@@ -1,4 +1,6 @@
 <view class="container">
+  <!-- 每日学习部分 -->
+  <view class="section-title">今日学习</view>
   <view class="character-card">
     <view class="character">{{currentChar}}</view>
     <view class="pinyin">{{pinyin}}</view>
@@ -6,6 +8,15 @@
     <view class="play-button" bindtap="playPronunciation">
       <text class="iconfont icon-play"></text>
       播放发音
+    </view>
+    <!-- 录音练习按钮 -->
+    <view class="record-buttons">
+      <button class="record-btn" 
+              bindtouchstart="startRecord" 
+              bindtouchend="stopRecord"
+              type="primary">
+        按住录音
+      </button>
     </view>
   </view>
 
@@ -15,6 +26,27 @@
       <view class="example-item" wx:for="{{examples}}" wx:key="text" bindtap="playExample" data-text="{{item.text}}">
         <view class="example-text">{{item.text}}</view>
         <view class="example-pinyin">{{item.pinyin}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 常用汉字部分 -->
+  <view class="common-chars-section">
+    <view class="section-title">常用汉字</view>
+    <view class="character-grid">
+      <view class="character-item" 
+            wx:for="{{commonCharacters}}" 
+            wx:key="char">
+        <view class="character-content">
+          <text class="common-char">{{item.char}}</text>
+          <text class="common-pinyin">{{item.pinyin}}</text>
+          <text class="common-meaning">{{item.meaning}}</text>
+        </view>
+        <button class="audio-btn"
+                bindtap="playCommonChar"
+                data-char="{{item.char}}">
+          播放发音
+        </button>
       </view>
     </view>
   </view>

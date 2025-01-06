@@ -1,7 +1,17 @@
 .container {
   padding: 20px;
+  background: #f5f5f5;
+  min-height: 100vh;
 }
 
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* 每日学习卡片样式 */
 .character-card {
   background: #fff;
   border-radius: 12px;
@@ -40,24 +50,36 @@
   display: flex;
   align-items: center;
   font-size: 14px;
+  margin-bottom: 15px;
 }
 
 .play-button .iconfont {
   margin-right: 5px;
 }
 
+/* 录音按钮样式 */
+.record-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.record-btn {
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  border-radius: 40rpx;
+}
+
+/* 例句部分样式 */
 .examples-section {
   background: #fff;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.section-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: #333;
+  margin-bottom: 20px;
 }
 
 .examples-list {
@@ -81,4 +103,67 @@
 .example-pinyin {
   font-size: 14px;
   color: #666;
+}
+
+/* 常用汉字部分样式 */
+.common-chars-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.character-item {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.character-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.common-char {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.common-pinyin {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.common-meaning {
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+}
+
+.audio-btn {
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  background: #4CAF50;
+  color: white;
+  border-radius: 30rpx;
+  padding: 0;
+}
+
+.audio-btn:active {
+  opacity: 0.8;
 } 
