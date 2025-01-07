@@ -1,4 +1,4 @@
-const { playText } = require('../../utils/iflytek')
+const { textToSpeech } = require('../../utils/speech')
 
 Page({
   data: {
@@ -64,65 +64,110 @@ Page({
   },
 
   // 播放发音
-  playPronunciation() {
+  async playPronunciation() {
     if (this.data.isPlaying) return
-
     this.setData({ isPlaying: true })
-    
-    playText(this.data.currentChar)
-      .then(() => {
+
+    try {
+      const audioPath = await textToSpeech(this.data.currentChar)
+      const audioContext = wx.createInnerAudioContext()
+      audioContext.src = audioPath
+      audioContext.play()
+
+      audioContext.onEnded(() => {
         this.setData({ isPlaying: false })
+        audioContext.destroy()
       })
-      .catch(err => {
-        console.error('播放失败:', err)
+
+      audioContext.onError(() => {
+        console.error('播放失败')
         this.setData({ isPlaying: false })
+        audioContext.destroy()
         wx.showToast({
           title: '播放失败',
           icon: 'none'
         })
       })
+    } catch (err) {
+      console.error('语音合成失败:', err)
+      this.setData({ isPlaying: false })
+      wx.showToast({
+        title: '播放失败',
+        icon: 'none'
+      })
+    }
   },
 
   // 播放例句
-  playExample(e) {
+  async playExample(e) {
     const { text } = e.currentTarget.dataset
     if (this.data.isPlaying) return
-
     this.setData({ isPlaying: true })
-    
-    playText(text)
-      .then(() => {
+
+    try {
+      const audioPath = await textToSpeech(text)
+      const audioContext = wx.createInnerAudioContext()
+      audioContext.src = audioPath
+      audioContext.play()
+
+      audioContext.onEnded(() => {
         this.setData({ isPlaying: false })
+        audioContext.destroy()
       })
-      .catch(err => {
-        console.error('播放失败:', err)
+
+      audioContext.onError(() => {
+        console.error('播放失败')
         this.setData({ isPlaying: false })
+        audioContext.destroy()
         wx.showToast({
           title: '播放失败',
           icon: 'none'
         })
       })
+    } catch (err) {
+      console.error('语音合成失败:', err)
+      this.setData({ isPlaying: false })
+      wx.showToast({
+        title: '播放失败',
+        icon: 'none'
+      })
+    }
   },
 
   // 播放常用字发音
-  playCommonChar(e) {
+  async playCommonChar(e) {
     const { char } = e.currentTarget.dataset
     if (this.data.isPlaying) return
-
     this.setData({ isPlaying: true })
-    
-    playText(char)
-      .then(() => {
+
+    try {
+      const audioPath = await textToSpeech(char)
+      const audioContext = wx.createInnerAudioContext()
+      audioContext.src = audioPath
+      audioContext.play()
+
+      audioContext.onEnded(() => {
         this.setData({ isPlaying: false })
+        audioContext.destroy()
       })
-      .catch(err => {
-        console.error('播放失败:', err)
+
+      audioContext.onError(() => {
+        console.error('播放失败')
         this.setData({ isPlaying: false })
+        audioContext.destroy()
         wx.showToast({
           title: '播放失败',
           icon: 'none'
         })
       })
+    } catch (err) {
+      console.error('语音合成失败:', err)
+      this.setData({ isPlaying: false })
+      wx.showToast({
+        title: '播放失败',
+        icon: 'none'
+      })
+    }
   },
 
   // 录音练习

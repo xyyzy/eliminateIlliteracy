@@ -9,4 +9,26 @@
       </view>
     </view>
   </view>
+
+  <!-- 翻译功能区域 -->
+  <view class="translation-section">
+    <view class="translation-header">
+      <text class="section-title">实时翻译</text>
+      <text class="section-desc">按住说话，自动翻译成普通话</text>
+    </view>
+
+    <view class="translation-content">
+      <view class="result-display" wx:if="{{translationResult}}">
+        <text class="result-text">{{translationResult}}</text>
+      </view>
+
+      <view class="translation-controls">
+        <button class="translate-btn {{isTranslating ? 'recording' : ''}}"
+                bindtouchstart="startTranslation"
+                bindtouchend="stopTranslation">
+          {{isTranslating ? '松开结束' : '按住说话'}}
+        </button>
+      </view>
+    </view>
+  </view>
 </view> 
